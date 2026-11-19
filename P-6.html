@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>HealthNest - Positioning Elements</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8f7;
+            text-align: center;
+        }
+
+        header {
+            background-color: #087f78;
+            color: white;
+            padding: 25px;
+        }
+
+        /* Sticky Position */
+        nav {
+            background-color: #064e49;
+            padding: 15px;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 15px;
+        }
+
+        h2 {
+            color: #087f78;
+            margin: 25px;
+        }
+
+        /* Centered Responsive Quadrant Layout */
+        .container {
+            display: grid;
+            grid-template-columns: repeat(2, 200px);
+            grid-template-rows: repeat(2, 150px);
+            gap: 20px;
+            justify-content: center;
+            align-content: center;
+            margin: 30px auto;
+        }
+
+        .box {
+            background-color: #b2dfdb;
+            border: 2px solid #087f78;
+            border-radius: 10px;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        /* Relative Position */
+        .relative {
+            position: relative;
+            top: 10px;
+            left: 10px;
+        }
+
+        /* Absolute Position and Z-index */
+        .absolute {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            background-color: orange;
+            padding: 5px;
+            z-index: 2;
+        }
+
+        /* Static Position */
+        .static {
+            position: static;
+        }
+
+        /* Fixed Position */
+        .fixed {
+            position: fixed;
+            bottom: 15px;
+            right: 15px;
+            background-color: #087f78;
+            color: white;
+            padding: 12px;
+            border-radius: 8px;
+            z-index: 20;
+        }
+
+        /* Z-index Demonstration */
+        .overlap {
+            position: relative;
+            height: 150px;
+            margin: 30px auto;
+        }
+
+        .layer1,
+        .layer2 {
+            position: absolute;
+            width: 120px;
+            height: 100px;
+            padding: 30px;
+            color: white;
+        }
+
+        .layer1 {
+            background-color: teal;
+            left: 40%;
+            z-index: 1;
+        }
+
+        .layer2 {
+            background-color: tomato;
+            left: 45%;
+            top: 25px;
+            z-index: 2;
+        }
+
+        footer {
+            background-color: #064e49;
+            color: white;
+            padding: 15px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 500px) {
+            .container {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto;
+                width: 80%;
+            }
+
+            .box {
+                min-height: 120px;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 5px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>HealthNest</h1>
+        <p>Preventive Healthcare and Diagnostics</p>
+    </header>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#positions">Positions</a>
+        <a href="#zindex">Z-Index</a>
+    </nav>
+
+    <h2 id="home">CSS Positioning Elements</h2>
+
+    <p>Learn different CSS positioning properties using HealthNest.</p>
+
+    <!-- Position Types and Quadrant Layout -->
+    <h2 id="positions">Position Types</h2>
+
+    <div class="container">
+
+        <div class="box">
+            <div>
+                <h3>Static</h3>
+                <p>Normal Position</p>
+                <div class="static">Health Checkup</div>
+            </div>
+        </div>
+
+        <div class="box">
+            <div>
+                <h3>Relative</h3>
+                <p class="relative">Health Tips</p>
+            </div>
+        </div>
+
+        <div class="box">
+            <div>
+                <h3>Absolute</h3>
+                <p>Diagnostics</p>
+                <span class="absolute">New</span>
+            </div>
+        </div>
+
+        <div class="box">
+            <div>
+                <h3>Sticky</h3>
+                <p>Scroll to see sticky navigation</p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Z-index Demonstration -->
+    <h2 id="zindex">Z-Index Demonstration</h2>
+
+    <p>Higher z-index elements appear above lower ones.</p>
+
+    <div class="overlap">
+        <div class="layer1">Layer 1</div>
+        <div class="layer2">Layer 2</div>
+    </div>
+
+    <!-- Fixed Position -->
+    <div class="fixed">
+        HealthNest Support
+    </div>
+    <footer>
+        <p>&copy; 2026 HealthNest. All Rights Reserved.</p>
+    </footer>
+</body>
+
+</html>
